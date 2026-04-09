@@ -1,0 +1,16 @@
+[
+  {
+    "thought": "The big primary button is obvious. I should try it first.",
+    "action_type": "click",
+    "target_element_id": "1",
+    "input_text": null,
+    "confidence_score": 0.92
+  },
+  {
+    "thought": "The page looks done and I have reached the goal.",
+    "action_type": "finish",
+    "target_element_id": null,
+    "input_text": null,
+    "confidence_score": 0.99
+  }
+]
