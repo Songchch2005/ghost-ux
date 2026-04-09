@@ -1,4 +1,4 @@
-# Ghost-UX
+# Ghost-UX-V0
 
 Ghost-UX is an AI UX testing agent built on top of Vision LLMs and Playwright.
 You give it a website, a persona, and a task goal. It opens the page, observes what is visible, decides what to do next, and produces a replayable UX test report.
