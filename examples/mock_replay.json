@@ -1,0 +1,16 @@
+[
+  {
+    "thought": "The hero CTA is large and inviting. I should click it first.",
+    "action_type": "click",
+    "target_element_id": "1",
+    "input_text": null,
+    "confidence_score": 0.93
+  },
+  {
+    "thought": "The scripted journey is complete, so I can wrap up here.",
+    "action_type": "finish",
+    "target_element_id": null,
+    "input_text": null,
+    "confidence_score": 0.99
+  }
+]

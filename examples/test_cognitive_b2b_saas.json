@@ -1,0 +1,61 @@
+{
+  "start_url": "https://www.atlassian.com/software/jira",
+  "browser": {
+    "headless": false,
+    "viewport_width": 1440,
+    "viewport_height": 960,
+    "navigation_timeout_ms": 20000,
+    "action_timeout_ms": 8000,
+    "max_dom_elements": 50,
+    "screenshot_full_page": false,
+    "locale": "en-US",
+    "timezone_id": "Asia/Shanghai"
+  },
+  "model": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "api_key_env": "GEMINI_API_KEY",
+    "temperature": 0.2,
+    "max_output_tokens": 900,
+    "retry_limit": 2,
+    "retry_backoff_seconds": 2.0,
+    "max_retry_wait_seconds": 35.0
+  },
+  "agent": {
+    "max_steps": 8,
+    "min_action_delay_ms": 350,
+    "max_action_delay_ms": 1200,
+    "low_confidence_threshold": 0.45,
+    "retry_limit_per_action": 2,
+    "stall_detection_window": 4,
+    "repeat_action_limit": 2,
+    "persona": "A non-expert first-time visitor to a B2B SaaS product who does not understand terms like API, SaaS, enablement, closed-loop, or core logic, and quickly becomes overloaded by jargon.",
+    "goal": "Figure out what this product does, find pricing, trial, or demo entry points, and judge whether the page is hard to understand because of excessive jargon."
+  },
+  "sensory": {
+    "auto_from_persona": true,
+    "filters": [
+      "cognitive"
+    ],
+    "cognitive_enabled_domains": [
+      "general",
+      "b2b_saas",
+      "ai"
+    ],
+    "cognitive_custom_terms": [
+      "workflow",
+      "collaboration platform",
+      "intelligent automation"
+    ],
+    "cognitive_placeholder": "[unfamiliar jargon]",
+    "cognitive_case_sensitive": false,
+    "cognitive_visual_scrub": true,
+    "cognitive_visual_scrub_strength": "light",
+    "cognitive_phrase_density_threshold": 2,
+    "cognitive_visual_max_text_length": 30
+  },
+  "report": {
+    "output_dir": "artifacts",
+    "keep_screenshots": true
+  }
+}

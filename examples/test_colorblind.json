@@ -1,0 +1,39 @@
+{
+  "start_url": "https://the-internet.herokuapp.com/challenging_dom",
+  "browser": {
+    "headless": false,
+    "viewport_width": 1440,
+    "viewport_height": 960,
+    "navigation_timeout_ms": 45000,
+    "action_timeout_ms": 10000,
+    "max_dom_elements": 40,
+    "screenshot_full_page": false,
+    "locale": "en-US",
+    "timezone_id": "Asia/Shanghai"
+  },
+  "model": {
+  "provider": "gemini",
+  "model": "gemini-2.5-flash",
+  "api_key_env": "GEMINI_API_KEY",
+  "temperature": 0.2,
+  "max_output_tokens": 900,
+  "retry_limit": 2,
+  "retry_backoff_seconds": 2.0,
+  "max_retry_wait_seconds": 35.0
+  },
+  "agent": {
+  "max_steps": 8,
+  "min_action_delay_ms": 350,
+  "max_action_delay_ms": 1200,
+  "low_confidence_threshold": 0.45,
+  "retry_limit_per_action": 2,
+  "stall_detection_window": 4,
+  "repeat_action_limit": 2,
+  "persona": "You are a user with achromatopsia. You see the world only in grayscale.",
+  "goal": "There are three rectangular buttons on the left side of the page. Figure out which one is red and click it. If you cannot distinguish the red one because you only see grayscale, describe that limitation clearly in your thought."
+  },
+  "report": {
+    "output_dir": "artifacts",
+    "keep_screenshots": true
+  }
+}

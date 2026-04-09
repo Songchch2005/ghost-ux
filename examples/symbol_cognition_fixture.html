@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghost-UX Symbol Cognition Fixture</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #f5f6f8;
+        color: #1f2937;
+        margin: 0;
+        padding: 40px;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 24px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+      }
+
+      .card h2 {
+        font-size: 16px;
+        margin: 0 0 12px;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      button,
+      a {
+        border: 0;
+        background: #111827;
+        color: white;
+        border-radius: 12px;
+        min-width: 48px;
+        min-height: 48px;
+        padding: 0 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .label {
+        font-size: 16px;
+        color: #111827;
+      }
+
+      .icon {
+        font-size: 22px;
+        line-height: 1;
+      }
+
+      .light {
+        background: #eef2ff;
+        color: #111827;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Symbol Cognition Fixture</h1>
+    <p>Use this page to verify that unlabeled icon-only controls are blinded, while labeled controls still pass.</p>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Pure Hamburger Icon</h2>
+      <button aria-label="Menu">
+          <span class="icon">☰</span>
+        </button>
+      </section>
+
+      <section class="card">
+        <h2>Pure Search Icon</h2>
+        <a href="#search" class="icon-button fa-search" aria-label="Search">
+          <span class="icon">🔍</span>
+        </a>
+      </section>
+
+      <section class="card">
+        <h2>Icon With Visible Text</h2>
+        <button>
+          <span class="icon">🔍</span>
+        <span style="margin-left: 8px;">Search</span>
+        </button>
+      </section>
+
+      <section class="card">
+        <h2>Icon With Adjacent Label</h2>
+        <div class="row">
+          <button class="light">
+            <span class="icon">☰</span>
+          </button>
+        <span class="label">Open menu</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Icon With aria-label Only</h2>
+      <button aria-label="Open filters">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M3 5h14M6 10h8m-5 5h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </section>
+
+      <section class="card">
+        <h2>Icon With aria-labelledby</h2>
+        <div class="row">
+          <button aria-labelledby="fixture-menu-label">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+      <span id="fixture-menu-label" class="label">Open navigation</span>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
